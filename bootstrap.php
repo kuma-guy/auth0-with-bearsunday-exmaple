@@ -12,8 +12,12 @@ return function (string $context, string $name = 'Kumaguy\Auth0WithBearSunday') 
     $request = $app->router->match($GLOBALS, $_SERVER);
     try {
         $response = $app->resource->{$request->method}->uri($request->path)($request->query);
+
         /* @var ResourceObject $response */
+        $response->headers['Access-Control-Allow-Origin'] = '*';
+        $response->headers['Access-Control-Allow-Headers'] = 'Authorization';
         $response->transfer($app->responder, $_SERVER);
+
 
         return 0;
     } catch (\Exception $e) {
