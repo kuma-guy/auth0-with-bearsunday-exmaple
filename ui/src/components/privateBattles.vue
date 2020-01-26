@@ -3,8 +3,8 @@
     <app-nav></app-nav>
     <h3 class="text-center">Secret Startup Battles</h3>
     <hr/>
-    
-    <div class="col-sm-4" v-for="battle in privateBattles">
+
+    <div class="col-sm-4" v-for="battle in privateBattles.battles">
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h3 class="panel-title"> {{ battle.name }} </h3>
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-sm-12">
       <div class="jumbotron text-center">
         <h2>View Public Startup Battles</h2>

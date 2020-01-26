@@ -4,7 +4,7 @@
     <h3 class="text-center">Daily Startup Battles</h3>
     <hr/>
 
-    <div class="col-sm-4" v-for="battle in publicBattles">
+    <div class="col-sm-4" v-for="battle in publicBattles.battles">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"> {{ battle.name }} </h3>
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col-sm-12">
       <div class="jumbotron text-center" v-if="isLoggedIn()">
         <h2>View Private Startup Battles</h2>
