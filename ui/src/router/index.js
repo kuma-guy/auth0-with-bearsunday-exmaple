@@ -1,15 +1,29 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Vue from 'vue';
+import Router from 'vue-router';
+import PrivateBattles from '@/components/privateBattles';
+import PublicBattles from '@/components/publicBattles';
+import Callback from '@/components/callback';
+import { requireAuth } from '../../utils/auth';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
-})
+      name: 'PublicBattles',
+      component: PublicBattles,
+    },
+    {
+      path: '/private-battles',
+      name: 'PrivateBattles',
+      beforeEnter: requireAuth,
+      component: PrivateBattles,
+    },
+    {
+      path: '/callback',
+      component: Callback,
+    },
+  ],
+});
