@@ -1,5 +1,5 @@
 <?php
-namespace Kumaguy\Auth0WithBearSunday\Resource\App\Api\Battles;
+namespace Kumaguy\Auth0WithBearSunday\Resource\Page\Api\Battles;
 
 use BEAR\Resource\ResourceObject;
 
